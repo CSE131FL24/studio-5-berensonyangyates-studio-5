@@ -1,9 +1,11 @@
 package studio5;
 
+import java.awt.Color;
+
 import edu.princeton.cs.introcs.StdDraw;
 
 public class Methods {
-
+	
 	/**
 	 * Compute the (Euclidean) distance between two points.
 	 *
@@ -17,6 +19,8 @@ public class Methods {
 		double distance = 0;
 		// FIXME: Hint use Math methods (e.g. Math.sqrt) to compute the distance
 		
+		distance = Math.sqrt(Math.pow(x2-x1, 2)+Math.pow(y2-y1,2));
+		
 		return distance;
 	}
 
@@ -27,8 +31,9 @@ public class Methods {
 	 * @param y      the y coordinate of the center of the bull's eye
 	 * @param radius the radius of the bull's eye
 	 */
-	public static void drawBullsEye(double x, double y, double radius) {
-		StdDraw.setPenColor(StdDraw.BLACK);
+	public static void drawBullsEye(double x, double y, double radius, int RValue, int GValue, int BValue) {
+		Color bullEyeColor = new Color (RValue, GValue, BValue);
+		StdDraw.setPenColor(bullEyeColor);
 		StdDraw.filledCircle(x, y, radius);
 
 		// TODO: Draw the remaining rings of the bull's eye
